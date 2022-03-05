@@ -331,7 +331,7 @@
               // Hide status bar after a few seconds - only if setStatus isn't active
               if (Module.setStatus.last && Module.setStatus.last.text == ''
                   && statusbar.date == print_date) {
-                element.innerHTML = ''; statusbar.hidden = true;
+                element.innerHTML = ''; statusbar.hidden = false;
               }
             }, 3000);
           };
@@ -371,12 +371,12 @@
           } else {
             progressElement.value = null;
             progressElement.max = null;
-            progressElement.hidden = true;
+            progressElement.hidden = false;
             if (!text) spinnerElement.style.display = 'none';
           }
           if (text == '') {
             statusElement.innerHTML = '';
-            document.getElementById('statusbar').hidden = true;
+            document.getElementById('statusbar').hidden = false;
           } else {
             statusElement.innerHTML = text + '<br />';
             document.getElementById('statusbar').hidden = false;
